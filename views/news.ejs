@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        #div_tabla{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+        }
+        table{
+            border: 1px solid black;
+        }
+        th{
+            font-size: 20px;
+            font-weight: 800;
+            border: 1px solid black;  
+            padding: 20px; 
+        }
+        td{
+            font-size: 16px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand mx-auto">NEWS</a>
+    </nav>
+
+    <div id="div_tabla">
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>NEWS</th>
+            </tr>
+            <% for (var i=0; i<news.length; i++ ) { %>
+                <tr>
+                    <td><%= news[i].id_news %></td>
+                    <td><%= news[i].title %></td>
+                    <td><%= news[i].news %></td>
+                </tr>
+            <% } %>
+        </table>
+
+        <div class="col-md-6 mt-4 card">
+            <form class="card-body" action="/news" method="post">
+                <h3 class="card-title">Add news</h3>
+                <div class="form-group" ">
+                    <input type="text" name="title" class="form-control" placeholder="News Title">
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <input type="text" name="news" class="form-control" placeholder="News Contant">
+                </div>
+                <input  style="margin-top: 10px;" type="submit" class="btn btn-primary">
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

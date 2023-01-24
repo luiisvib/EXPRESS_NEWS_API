@@ -5,7 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <section id="seccion_principal">
+      <h1><%= title %></h1>
+      <img src="/images/imagen.jpg">      <!-- La ruta se busca desde la carpeta public -->
+      <section id="seccion_news">
+        <a href="/news">NEWS</a>     <!-- Ponemos la ruta de la url correspondiente -->
+      </section>
+    </section>
   </body>
 </html>
