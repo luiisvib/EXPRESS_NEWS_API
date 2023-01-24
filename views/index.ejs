@@ -2,15 +2,19 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <section id="seccion_principal">
+    <header>
       <h1><%= title %></h1>
-      <img src="/images/imagen.jpg">      <!-- La ruta se busca desde la carpeta public -->
-      <section id="seccion_news">
-        <a href="/news/0/4">NEWS</a>     <!-- Ponemos la ruta de la url correspondiente -->
+    </header>
+    <main>
+      <img src="https://s03.s3c.es/imag/_v0/1200x655/4/a/6/bolsa-charts-istock.jpg">     
+      <section id="seccion_noticias">
+        <h2>Descubre nuestras noticias</h2>
+        <a href="/news/0/4">CONTINUAR</a>   
+        
       </section>
-    </section>
+    </main>
   </body>
 </html>
