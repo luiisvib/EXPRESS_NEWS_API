@@ -14,6 +14,18 @@ router.get('/:x/:y',  function(req, res, next) {
     var {x, y} = req.params 
     var siguiente = Number(x)+4
     var anterior = Number(x)-4
+    if (anterior<0){
+        anterior = 0
+    }
+    conexion.query(`Select * from news`, (err, results) =>{
+        var contador = 0
+        for (let x in results){
+            contador = contador+1
+        }
+        if(siguiente>=contador){
+            siguiente = siguiente-4
+        }
+    })
     conexion.query(`Select * from news limit ${x},${y}`, (err, result) =>{
         res.render("news",{
             news: result,
