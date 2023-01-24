@@ -7,26 +7,28 @@ const conexion = dbConnection()
 
 /* GET home page. */
 router.get('/',  function(req, res, next) {
-    let x=0
-    let y=5
-    conexion.query(`Select * from news limit ${x},${y}`, (err, result) =>{
-        res.render("news",{
-            news: result
-        });
-    })
-    
+    res.redirect("/news/0/4")
 });
 
+router.get('/:x/:y',  function(req, res, next) {
+    var {x, y} = req.params 
+    var final = Number(x)+4
+    conexion.query(`Select * from news limit ${x},${y}`, (err, result) =>{
+        res.render("news",{
+            news: result,
+            final: final
+        });
+    })
+});
 
 router.post("/",  function(req, res, next) {
     console.log(req.body)
     const {title, news} = req.body
-
     conexion.query("Insert into news SET ?", {
         title,
         news
     }, (error, result)=>{
-        res.redirect("/news")
+        res.redirect("/news/0/4")
     })
 });
 

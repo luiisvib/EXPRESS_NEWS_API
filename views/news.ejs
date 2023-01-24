@@ -38,21 +38,25 @@
 
     <div id="div_tabla">
 
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>TITLE</th>
-                <th>NEWS</th>
-            </tr>
-            <% for (var i=0; i<news.length; i++ ) { %>
-                <tr>
-                    <td><%= news[i].id_news %></td>
-                    <td><%= news[i].title %></td>
-                    <td><%= news[i].news %></td>
+        <section>
+            <table>
+                <tr >
+                    <th style="width: 100px;">ID</th>
+                    <th style="width: 200px;">TITLE</th>
+                    <th style="width: 200px;">NEWS</th>
                 </tr>
-            <% } %>
-        </table>
+                <% for (var i=0; i<news.length; i++ ) { %>
+                    <tr>
+                        <td><%= news[i].id_news %></td>
+                        <td><%= news[i].title %></td>
+                        <td><%= news[i].news %></td>
+                    </tr>
+                <% } %>
 
+            </table>
+            <button style="margin-top: 20px;"><a href="/news/<%= final %>/4">SIGUIENTE</a></button>
+
+        </section>
         <div class="col-md-6 mt-4 card">
             <form class="card-body" action="/news" method="post">
                 <h3 class="card-title">Add news</h3>
