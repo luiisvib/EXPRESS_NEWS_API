@@ -12,11 +12,13 @@ router.get('/',  function(req, res, next) {
 
 router.get('/:x/:y',  function(req, res, next) {
     var {x, y} = req.params 
-    var final = Number(x)+4
+    var siguiente = Number(x)+4
+    var anterior = Number(x)-4
     conexion.query(`Select * from news limit ${x},${y}`, (err, result) =>{
         res.render("news",{
             news: result,
-            final: final
+            siguiente: siguiente,
+            anterior: anterior
         });
     })
 });

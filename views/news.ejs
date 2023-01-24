@@ -43,7 +43,7 @@
                 <tr >
                     <th style="width: 100px;">ID</th>
                     <th style="width: 200px;">TITLE</th>
-                    <th style="width: 200px;">NEWS</th>
+                    <th style="width: 250px;">NEWS</th>
                 </tr>
                 <% for (var i=0; i<news.length; i++ ) { %>
                     <tr>
@@ -54,7 +54,11 @@
                 <% } %>
 
             </table>
-            <button style="margin-top: 20px;"><a href="/news/<%= final %>/4">SIGUIENTE</a></button>
+            <nav>
+                <button style="margin-top: 20px;"><a style=" text-decoration: none; color: black;" href="/news/<%= anterior %>/4">ANTERIOR</a></button>
+                <button style="margin-top: 20px;"><a style=" text-decoration: none; color: black;" href="/news/<%= siguiente %>/4">SIGUIENTE</a></button>
+            </nav>
+            
 
         </section>
         <div class="col-md-6 mt-4 card">
