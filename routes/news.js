@@ -7,7 +7,7 @@ const conexion = dbConnection()
 
 /* GET home page. */
 router.get('/',  function(req, res, next) {
-    res.redirect("/news/0/4")
+    
 });
 
 router.get('/:x/:y',  function(req, res, next) {
