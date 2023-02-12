@@ -6,8 +6,6 @@ var axios = require("axios")
 
 var clave_API = "https://jsonplaceholder.typicode.com/users"
 
-
-
 router.get('/', function(req, res, next) {
     axios.get(clave_API).then( respuesta => {
         datos_api = respuesta.data
